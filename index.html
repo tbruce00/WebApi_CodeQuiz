@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Assets/CSS/style.css" />
+    <title>Quiz Whiz</title>
+</head>
+<body>
+    <!--Quiz Start Page-->
+    <header class="navBar">
+        <a href="highscore.html">High Score</a>
+        <div class="float-right">Timer: <span id="countdown">25</span></div>
+    </header>
+    <div class="start-page">
+    <h1>Coding Quiz Whiz Challenge</h1>
+    <ul> 
+        <li>Answer the follwing questions within the alloted time.</li>
+        <li>Receive 10 points for each correct answer.</li>
+        <li>Receive 20 points for correctly answering the bonus question.</li>
+        <li>See where your score ranks on the All-Time High-Score List.</li>
+        <li>Enjoy!</li>
+    </ul>
+    </div>
+    <button class="start-btn" id="start">Start Quiz</button>
+    <!--Quiz Questions-->
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <div class="quiz-card" id="ques-ans">
+                <div id="questions"></div>
+                <div id="answers" class="answer-list">
+                    <p><button id="ans1"></button></p>
+                    <p><button id="ans2"></button></p>
+                    <p><button id="ans3"></button></p>
+                    <p><button id="ans4"></button></p>
+                <p id="checkanswer"></p>    
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!--Score Submit Page-->
+    <div class="final-score" id="score">
+        <div class="final-score-column">
+            Your Final Score Is <span id="finalscore"></span>
+        </div>
+        <form>
+            <p>Enter Your Name: <input id="namesubmit" type="text">
+            <button id="submitNameBtn" type="submit">Submit</button>
+            </p>
+        </form>        
+    </div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>    
+<script type="text/javascript" src="./Assets/JS/script.js"></script>     
+</body>
+</html>
