@@ -59,7 +59,7 @@ function startQuiz() {
 
     showQuestion();
 
-    nextQuestion(); 
+    quizQuestion();
 
 }
 
@@ -89,10 +89,6 @@ function showQuestion(){
     showEl.style.display = "block"
 }
 
-function nextQuestion(){
-    quizQuestion();
-} 
-
 
 function quizQuestion() {
 
@@ -106,7 +102,7 @@ function quizQuestion() {
 
 function checkAnswer(answer) {
     if (questArray[indexArray].answer === questArray[indexArray].choices[answer]){
-        correctAns = +10;
+        correctAns = (correctAns + 10);
 
     answerEl.textContent = "Correct Answer";
 } else {
@@ -117,7 +113,7 @@ if (indexArray < questArray.length) {
     quizQuestion();
 } else {
     highScore();
-}
+    }
 }
 
 function chooseA() { checkAnswer(0); }
@@ -131,6 +127,7 @@ function chooseD() { checkAnswer(3); }
 
 function highScore() {
     showscoreEl.style.display = "block";
+    showEl.style.display = "none";
 
     scoreEl.textContent = correctAns;
 }
@@ -140,3 +137,7 @@ function highScore() {
 
 
 startEl.addEventListener("click", startQuiz);
+choiceA.addEventListener("click", chooseA);
+choiceB.addEventListener("click", chooseB);
+choiceC.addEventListener("click", chooseC);
+choiceD.addEventListener("click", chooseD);
