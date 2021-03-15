@@ -106,6 +106,7 @@ function checkAnswer(answer) {
 
     answerEl.textContent = "Correct Answer";
 } else {
+    correctAns = (correctAns - 10);
     answerEl.textContent = "Wrong Answer";
 }
 indexArray++;
