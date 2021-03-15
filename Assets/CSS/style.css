@@ -69,23 +69,51 @@ li {
     display: none;
     flex-direction: column;
     flex-flow: column;
+    align-items: center;
+    margin: auto;
+   padding-left: 20%;
+   padding-right: 20%;
+   padding-top: 10%;
 }
 
 .quiz-header {
-    display: none;
+   font-size: 30px;
+   float: left;
+   color: rgb(3, 3, 94);
 }
-
 .quiz-card {
-    display: none;
+    font-size: 25px;
+    color: #ffff;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px;
+    
 }
 
-.high-score {
-    display: none;
-}
+.answer-list button:hover {
+    cursor: pointer;
+    background-color: grey;
+    box-shadow: honeydew;
 
+}
 
 .final-score {
     display: none;
+    flex-direction: column;
+    flex-flow: column;
+    align-items: center;
+    margin: auto;
+   padding-left: 20%;
+   padding-right: 20%;
+   padding-top: 10%;
 }
+
+
+
+.high-score {
+    
+}
+
+
+
 
 
