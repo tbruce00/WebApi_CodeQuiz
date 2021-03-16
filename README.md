@@ -6,7 +6,7 @@ For this project we were required to use the fundamentals of Javascript to creat
 - Click the "Start Quiz" Button to initiate the quiz
     * The timer will start at 60 seconds and count down from there until it reaches 0 then the quiz will be over.
 
--  A series of 5 questions will then run on the page and the user will have a choice of 4 answers to choose from in order to get the question right.
+-  A series of 5 questions and a bonus question will then run on the page and the user will have a choice of 4 answers to choose from in order to get the question right.
     * A correct answer awards the user with 10 points
     * A wrong answer deducts 10 points
 

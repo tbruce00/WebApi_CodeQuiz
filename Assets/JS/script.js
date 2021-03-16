@@ -46,7 +46,12 @@ var questArray = [
     { question: "What are some commonly used data types?",
       choices: ["A. Booleans", "B. Numbers", "C. Strings", "D. All of the above"],
       answer: "D. All of the above"
-    }  
+    },
+
+    { question: "Bonus: Is Nickelback the worst band of all time?",
+      choices : ["A. Yes", "B. Definitely Yes", "C. Most definitely Yes", "D. All of the Abocve"],
+      answer : "D. All of the Above"         
+    }
 ];
 
 //* Start Quiz Function when the start quiz button is clicked *//

@@ -107,17 +107,16 @@ li {
    padding-top: 10%;
 }
 
+
+.high-score {
+    font-size: 35px;   
+}
+
 .return-btn {
     text-decoration: none;
 }
 
-.clear-score {
-    text-decoration: none;
-}
 
-.high-score {
-    
-}
 
 
 
