@@ -11,10 +11,12 @@ var quest = 0;
 var welcomeEl = document.querySelector(".start-page");
 var showEl = document.querySelector(".quiz-container");
 var showscoreEl = document.querySelector(".final-score");
+var highscoreEl = document.querySelector("#scorelist");
 var startEl = document.querySelector("#start");
 var timerEl = document.querySelector("#countdown");
 var scoreEl = document.querySelector("#finalscore");
-var submitEl = document.querySelector("#namesubmit");
+var submitBtn = document.querySelector("#submitNameBtn");
+var nameInput = document.querySelector("#namesubmit");
 var questionEl = document.querySelector("#questions")
 var answerEl = document.querySelector("#answer");
 var choiceA = document.querySelector("#ans1");
@@ -133,6 +135,32 @@ function highScore() {
     scoreEl.textContent = correctAns;
 }
 
+function storeScore(event) {
+   
+
+    if(nameInput.value === ""){
+        alert("Please Enter Your Name");
+        return;
+    }
+    var savedScore = localStorage.getItem("high scores");
+    var scoresArray;
+
+    if (savedScore === null) {
+        scoresArray= [];
+    } else {
+        scoresArray = JSON.parse(savedScore)
+    }
+    var userList = {
+        name: nameInput.value,
+        score: correctAns.textContent
+    };
+    console.log(userList);
+    scoresArray.push(userList);
+
+    var scoreArraystring = JSON.stringify(scoresArray);
+    window.localStorage.setItem("high scores", scoreArraystring);
+
+}
 
 
 
@@ -142,3 +170,10 @@ choiceA.addEventListener("click", chooseA);
 choiceB.addEventListener("click", chooseB);
 choiceC.addEventListener("click", chooseC);
 choiceD.addEventListener("click", chooseD);
+
+submitBtn.addEventListener("click", function(event){
+    storeScore(event);
+
+    window.location.href = './highscore.html'
+
+})
