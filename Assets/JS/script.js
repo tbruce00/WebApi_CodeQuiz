@@ -67,7 +67,6 @@ function startQuiz() {
     showQuestion();
 
     quizQuestion();
-
 }
 
 //* Quiz Timer *//
@@ -86,17 +85,16 @@ function timerStart() {
 	}, 1000);
     return;
 }
-
+//* Hides the Start Page *//
 function clearPage(){
-    //* Hides the Start Page *//
     welcomeEl.style.display = "none";
 }
-
+//* Shows the Questions After Start Button is Clicked *//
 function showQuestion(){
     showEl.style.display = "block"
 }
 
-
+//* Declares the Quiz Questions Arrangement *//
 function quizQuestion() {
 
     questionEl.textContent = questArray[indexArray].question;
@@ -106,7 +104,7 @@ function quizQuestion() {
     choiceD.textContent = questArray[indexArray].choices[3];
 
 }
-
+//* Checks if the Answer if Correct and Assigns Points *//
 function checkAnswer(answer) {
     if (questArray[indexArray].answer === questArray[indexArray].choices[answer]){
         correctAns = (correctAns + 10);
@@ -132,38 +130,24 @@ function chooseC() { checkAnswer(2); }
 
 function chooseD() { checkAnswer(3); }
 
-
+//* Displays Points Total and Name Submit Screen *//
 function highScore() {
     showscoreEl.style.display = "block";
     showEl.style.display = "none";
 
     scoreEl.textContent = correctAns;
 }
+//* Stores Name and Points Total on High Scores Page *//
+function storeScore () {
+nameInput.value
 
-function storeScore(event) {
-   
-
-    if(nameInput.value === ""){
-        alert("Please Enter Your Name");
-        return;
-    }
-    var savedScore = localStorage.getItem("high scores");
-    var scoresArray;
-
-    if (savedScore === null) {
-        scoresArray= [];
-    } else {
-        scoresArray = JSON.parse(savedScore)
-    }
-    var userList = {
-        name: nameInput.value,
-        score: correctAns.textContent
-    };
-    console.log(userList);
-    scoresArray.push(userList);
-
-    var scoreArraystring = JSON.stringify(scoresArray);
-    window.localStorage.setItem("high scores", scoreArraystring);
+var addName = {
+    name: nameInput,
+    score: correctAns
+};
+var addScore = JSON.parse(localStorage.getItem("addScore")|| "[]");
+addScore.push(storeScore)
+localStorage.setItem("addScore", JSON.stringify(addScore));
 
 }
 
@@ -177,7 +161,8 @@ choiceC.addEventListener("click", chooseC);
 choiceD.addEventListener("click", chooseD);
 
 submitBtn.addEventListener("click", function(event){
-    storeScore(event);
+    event.stopPropagation();
+    storeScore();
 
     window.location.href = './highscore.html'
 
